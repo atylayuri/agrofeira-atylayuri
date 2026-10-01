@@ -6,12 +6,12 @@
     <title>Safra</title>
 </head>
 <body>
-    <a href="#pular">Pular conteúdo</a>
-    <header>
+    <a class="pular" href="#pular">Pular conteúdo</a>
+    <header class="cabecalho-site">
         <h1>Safra</h1>
     </header>
     <nav>
-         <ul>
+         <ul class="menu">
             <a href="index.html"><li>Principal</li></a>
             <a href="cadastro-produtor.html"><li>Cadastro de produtor</li></a>
             <a href="sobre.html"><li>Sobre</li></a>
@@ -19,32 +19,34 @@
         </ul>
      </nav>
 
-     <main id="pular">
+     <main id="conteudo_principal">
         <h2>Safra de Produtos Semestral</h2>
         <p> A tabela mostra a disponibilidade de cada produto nos seis
             primeiros meses do ano. Os valores indicam se a oferta está
             cheia, meia ou vazia.</p>
 
         <section>
-            <table>
-        <caption>Safa AgroFeira</caption> 
-        <tr>
-            <th scope="col">Produtos</th>
-            <th scope="col">Jan</th>
-            <th scope="col">Fev</th>
-            <th scope="col">Mar</th>
-            <th scope="col">Abr</th>
-            <th scope="col">Mar</th>
-            <th scope="col">Jun</th>
-        </tr>
-                <th scope="row">Mandiaca</th>
+        <table class="tabela-safra">
+            <caption>Safa AgroFeira</caption> 
+            
+                <tr>
+                    <th scope="col">Produtos</th>
+                    <th scope="col">Jan</th>
+                    <th scope="col">Fev</th>
+                    <th scope="col">Mar</th>
+                    <th scope="col">Abr</th>
+                    <th scope="col">Mar</th>
+                    <th scope="col">Jun</th>
+                </tr>
+                    <th scope="row">Mandiaca</th>
                     <td>cheio</td>
                     <td>cheio</td>
                     <td>meia</td>
                     <td>cheio</td>
                     <td>cheio</td>
                     <td>cheio</td>
-            <tr>
+                    <tr>
+                
                 <th scope="row">Banana-prata</th>
                     <td>cheio</td>
                     <td>meia</td>
@@ -97,7 +99,7 @@
 
      
 
-    <footer>
+    <footer  class="rodape-site">
         <p>AgroFeira - Paragominas</p>
     </footer>
 </body>
