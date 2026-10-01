@@ -19,6 +19,82 @@
         </ul>
     </nav>
 
+    <main id="pular">
+        <h2>Cadastro produtor</h2>
+        
+        <form>
+            <fieldset>
+                <legend>Quem é vc</legend>
+                    <p>
+                        <label for="inome">Nome:</label>
+                        <input type="text" name="nome" id="inome" autocomplete="name">
+                    </p>
+                    <p>
+                        <label for="iemail">E-mail:</label>
+                        <input type="email" name="email" id="iemail" autocomplete="email" required>
+                    </p>
+                    <p>
+                        <label for="inumero">Telefone:</label>
+                        <input type="tel" name="numero" id="inumero" autocomplete="tel" required>
+                    </p>
+                    <p>
+                        <label for="iCAF">Número do CAF:</label>
+                        <input type="text" name="iCAF" id="CAF">
+                    </p>
+                    <p>
+                        <label for="iCEP">CEP da propriedade:</label>
+                        <input type="text" name="CEP" id="iCEP" inputmode="numeric" pattern="[0-9]{5}-?[0-9]{3}" aria-describedby="ajuda-cep <small id="ajuda-cep"> Formato: 00000-000">
+
+                        </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>O que vc vende</legend>
+                    <p>
+                        <label for="iproduto">Produto Principal</label> 
+                            <select name="produto" id="iproduto">
+                                <option value="">Escolha um produto</option>
+                                <option value="mandioca">Mandioca</option>
+                                <option value="banana-prata">Banana-prata</option>
+                                <option value="acai">Açaí</option>
+                                <option value="pimenta-do-reino">Pimenta-do-reino</option>
+                            </select>>
+                    </p>
+                    <p>
+                        <label for="iquantidade_semana">Quantidade por semana</label>
+                        <input type="number" name="quantidade_semana" id="iquantidade_semana" min="1" max="500" step="1" required>
+                    </p>
+                    <p>
+                        <label for="inicio">Começa a entregar em</label>
+                        <input type="date" name="inicio" id="iinicio">
+                </p>
+            </fieldset>
+           
+            <fieldset>
+                <legend>Como entrega</legend>
+                    <p>
+                        <input type="checkbox" name="levar" id="ilevar">
+                        <label for="ilevar">Levar à feira</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="retirar" id="iretirar">
+                        <label for="iretirar">A feira retira na propriedade</label>
+                    </p>
+
+                        <label for="obervaçao">Obersevação</label>
+                        <textarea name="iobservacao" id="obervaçao" rows="3"></textarea>
+
+                    <p>
+                        <input type="checkbox" name="iregra" id="regra">
+                        <label for="termo">Li e aceito as regras da feira</label>
+                    </p>
+            </fieldset>
+
+            <button type="submit">Enviar cadastro</button>
+            
+        </form>
+    </main>
+
      <footer>
         <p>AgroFeira - Paragominas</p>
     </footer>
