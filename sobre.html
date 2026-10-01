@@ -1,60 +1,102 @@
-*<!DOCTYPE html>
-<html lang="pt-br>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre</title>
-</head class="cabecalho-site">
-<body>
-    <a class="pular" href="#pular">Pular conteúdo</a>
-    <header>
-        <h1>Sobre nós</h1>
-    </header>
-    <nav>
-        <ul class="menu">
-            <a href="index.html"><li>Principal</li></a>
-            <a href="cadastro-produtor.html"><li>Cadastro de produtor</li></a>
-            <a href="sobre.html"><li>Sobre</li></a>
-            <a href="safra.html"><li>Safra</li></a>
-        </ul>
-    </nav>
-    
-    <main id="conteudo_principal">
+    <title>Sobre - AgroFeira</title>
+</head>
 
-        <h2>Sobre a AgroFeira </h2>
+<body>
+
+    <a class="pular" href="#conteudo-principal">
+        Pular para o conteúdo
+    </a>
+
+    <header class="cabecalho-site">
+
+        <h1>AgroFeira</h1>
+
+        <nav aria-label="Principal">
+            <ul class="menu">
+
+                <li>
+                    <a href="index.html">Início</a>
+                </li>
+
+                <li>
+                    <a href="safra.html">Safra</a>
+                </li>
+
+                <li>
+                    <a href="cadastro-produtor.html">
+                        Cadastro de produtor
+                    </a>
+                </li>
+
+                <li>
+                    <a href="sobre.html" aria-current="page">
+                        Sobre
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <main id="conteudo-principal">
+
+        <h2>Sobre a AgroFeira</h2>
 
         <article>
+
             <h3>Depoimento</h3>
-            <img class="figura-destaque" src="cupuacu.jpg" alt="foto de uma pessoa segurando um cupuaçu partido ao meio" width="330px" height="247px" loading="lazy">
-            <figcaption>Foto: BjoernS, CC BY-SA 2.0 DE, via Wikimedia Commons. </figcaption>
+
+            <figure>
+
+                <img
+                    src="cupuacu.jpg"
+                    alt="Cupuaçu sobre uma superfície"
+                    width="330"
+                    height="247"
+                    loading="lazy"
+                >
+
+                <figcaption>
+                    Foto: BjoernS, CC BY-SA 2.0 DE,
+                    via Wikimedia Commons.
+                </figcaption>
+
+            </figure>
+
             <blockquote>
                 <p>
                     "A AgroFeira aproxima os produtores da comunidade
                     e valoriza os produtos da nossa região."
                 </p>
             </blockquote>
+
         </article>
 
         <section>
+
             <h3>Como vender na feira</h3>
+
             <ol>
-                <li>
-                    Faça seu cadastro como produtor.
-                </li>
-
-                <li>
-                    Informe os produtos que você vende.
-                </li>
-
-                <li>
-                    Combine a entrega dos produtos para a feira.
+                <li>Faça seu cadastro como produtor.</li>
+                <li>Informe os produtos que você vende.</li>
+                <li>Combine a entrega dos produtos para a feira.</li>
             </ol>
+
         </section>
-        
+
         <section>
-            <h3>Glossário</h3>
+
+            <h3>Um glossário</h3>
 
             <dl>
+
                 <dt>Saca</dt>
                 <dd>
                     Unidade utilizada para comercializar a mandioca.
@@ -69,23 +111,25 @@
                 <dd>
                     Unidade utilizada para comercializar o açaí.
                 </dd>
+
             </dl>
+
         </section>
 
         <section>
+
             <h3>Perguntas frequentes</h3>
 
-            <details class="pergunta" name="fechar" open>
-                <summary>
-                    Quem pode vender na AgroFeira?
-                </summary>
+            <details class="pergunta" name="faq" open>
+                <summary>Quem pode vender na AgroFeira?</summary>
 
                 <p>
                     Produtores podem realizar o cadastro para informar
                     os produtos que desejam vender.
                 </p>
             </details>
-            <details class="pergunta" name="fechar">
+
+            <details class="pergunta" name="faq">
                 <summary>
                     Quais produtos podem ser vendidos?
                 </summary>
@@ -95,24 +139,32 @@
                     na página inicial.
                 </p>
             </details>
-            <details class="pergunta" name="fechar">
-                <summary>
-                    Como faço meu cadastro?
-                </summary>
+
+            <details class="pergunta" name="faq">
+                <summary>Como faço meu cadastro?</summary>
 
                 <p>
                     Acesse a página de cadastro de produtor e preencha
                     as informações solicitadas.
                 </p>
             </details>
+
         </section>
-        
-        <img src="enfeite.png" alt="" width="330px" height="93">
+
+        <img
+            src="enfeite.png"
+            alt=""
+            width="330"
+            height="93"
+        >
 
     </main>
 
-     <footer class="rodape-site">
-        <p>AgroFeira - Paragominas</p>
+    <footer class="rodape-site">
+        <p>
+            AgroFeira — produtos frescos da nossa região.
+        </p>
     </footer>
+
 </body>
 </html>
