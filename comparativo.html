@@ -28,68 +28,14 @@
     </header>
     <main id="conteudo-principal">
         <h2>Relatório comparativo dos catálogos</h2>
-        <p><strong>Nome completo:</strong> [PREENCHER NOME COMPLETO]</p>
-        <p><strong>Matrícula:</strong> [PREENCHER MATRÍCULA]</p>
-        <p><strong>Repositório:</strong> [INSERIR URL DO REPOSITÓRIO]</p>
-        <p><strong>Site:</strong> [INSERIR URL DO SITE]</p>
+        <p><strong>Nome completo:</strong> Átyla Yuri Torres da Silva</p>
+        <p><strong>Matrícula:</strong>2024004967</p>
+        <p><strong>Repositório:</strong>https://github.com/atylayuri/agrofeira-atylayuri</p>
+        <p><strong>Site:</strong>https://atylayuri.github.io/agrofeira-atylayuri/</p>
         <ul>
             <li><a href="catalogo.html">Catálogo autoral</a></li>
             <li><a href="catalogo-bootstrap.html">Catálogo Bootstrap</a></li>
         </ul>
-
-        <h3>O catálogo em três larguras</h3>
-        <p>360 px: [INFORMAR quantidade de colunas, ausência/presença de “Mais pedidos” e resultado false/true do teste de rolagem].</p>
-        <p>768 px: [INFORMAR quantidade de colunas, ausência/presença de “Mais pedidos” e resultado false/true do teste de rolagem].</p>
-        <p>1200 px: [INFORMAR quantidade de colunas, presença/ausência de “Mais pedidos” e resultado false/true do teste de rolagem].</p>
-        <figure><img src="captura-1-360.png" alt="Catálogo Bootstrap em largura de 360 pixels, com a barra do modo dispositivo visível" width="1200" height="800"><figcaption>Captura 1 — Catálogo Bootstrap em 360 px</figcaption></figure>
-        <figure><img src="captura-2-1200-antes.png" alt="Catálogo Bootstrap em 1200 pixels antes da customização" width="1200" height="800"><figcaption>Captura 2 — Catálogo Bootstrap em 1200 px, antes da customização</figcaption></figure>
-
-        <h3>1. A customização</h3>
-        <p>A variável <code>--bs-primary</code> isolada não altera o fundo do botão porque a regra <code>.btn-primary</code> utiliza as variáveis <code>--bs-btn-bg</code>, <code>--bs-btn-border-color</code> e <code>--bs-btn-color</code>. A regra é customizada em <code>agrofeira-bootstrap.css</code>.</p>
-        <table class="tabela-safra">
-            <caption>Variáveis personalizadas e tokens correspondentes</caption>
-            <thead><tr><th scope="col">Variável alterada</th><th scope="col">Token e valor</th><th scope="col">Efeito na página</th></tr></thead>
-            <tbody>
-                <tr><th scope="row">Fundo e texto</th><td>--cor-fundo ([VALOR]) e --cor-texto ([VALOR])</td><td>Define as cores gerais da página e dos cartões</td></tr>
-                <tr><th scope="row">Botão</th><td>--cor-marca ([VALOR]), --cor-marca-forte ([VALOR]) e --cor-sobre-marca ([VALOR])</td><td>Personaliza o botão nos estados normal, hover e ativo</td></tr>
-                <tr><th scope="row">Link</th><td>--cor-marca-rgb ([VALOR]) e --cor-marca-forte-rgb ([VALOR])</td><td>Personaliza o link Início e seu hover</td></tr>
-                <tr><th scope="row">Cantos</th><td>--raio ([VALOR])</td><td>Define o arredondamento dos cartões, alerta e botão</td></tr>
-                <tr><th scope="row">Texto secundário e fonte</th><td>--cor-texto-suave ([VALOR]) e --fonte-texto ([VALOR])</td><td>Define a cor secundária e a tipografia do corpo</td></tr>
-            </tbody>
-        </table>
-        <figure><img src="captura-3-regra-botao.png" alt="Painel Styles mostrando a regra btn-primary e a variável bs-btn-bg" width="1200" height="800"><figcaption>Captura 3 — Regra .btn-primary no painel Styles</figcaption></figure>
-        <figure><img src="captura-4-1200-depois.png" alt="Catálogo Bootstrap em 1200 pixels depois da customização, no tema claro" width="1200" height="800"><figcaption>Captura 4 — Catálogo Bootstrap em 1200 px, depois da customização</figcaption></figure>
-
-        <h3>2. As medições</h3>
-        <p>As medições devem ser preenchidas manualmente a partir das páginas públicas, no Chrome, com Disable cache e Disable network cache conforme o procedimento da atividade. Não inserir valores estimados.</p>
-        <table class="tabela-safra">
-            <caption>Comparação dos dados de rede, desempenho e código</caption>
-            <thead><tr><th scope="col">Critério</th><th scope="col">Catálogo autoral</th><th scope="col">Catálogo Bootstrap</th></tr></thead>
-            <tbody>
-                <tr><th scope="row">CSS transferido</th><td>[kB; Google Fonts entre parênteses]</td><td>[kB; Bootstrap + tokens.css + agrofeira-bootstrap.css]</td></tr>
-                <tr><th scope="row">Fontes</th><td>[kB]</td><td>[kB]</td></tr>
-                <tr><th scope="row">Imagens</th><td>[kB]</td><td>[kB]</td></tr>
-                <tr><th scope="row">Documento</th><td>[kB]</td><td>[kB]</td></tr>
-                <tr><th scope="row">Total transferido</th><td>[kB; indicar favicon se incluído]</td><td>[kB; indicar favicon se incluído]</td></tr>
-                <tr><th scope="row">LCP (mediana de cinco cargas)</th><td>[s; cinco valores: ...]</td><td>[s; cinco valores: ...]</td></tr>
-                <tr><th scope="row">Linhas de CSS próprio</th><td>[total e soma por arquivo]</td><td>[total e soma por arquivo]</td></tr>
-                <tr><th scope="row">Classes no cartão do açaí</th><td>[quantidade de classes e elementos]</td><td>[sem selo: quantidade; com selo: quantidade]</td></tr>
-            </tbody>
-        </table>
-        <figure><img src="captura-5-rede-autoral.png" alt="Aba Network mostrando as requisições e o resumo do catálogo autoral" width="1200" height="800"><figcaption>Captura 5 — Aba Network do catálogo autoral</figcaption></figure>
-        <figure><img src="captura-6-rede-bootstrap.png" alt="Aba Network mostrando as requisições e o resumo do catálogo Bootstrap" width="1200" height="800"><figcaption>Captura 6 — Aba Network do catálogo Bootstrap</figcaption></figure>
-        <figure><img src="captura-7-lcp-autoral.png" alt="Medição LCP do catálogo autoral com o elemento LCP identificado" width="1200" height="800"><figcaption>Captura 7 — LCP do catálogo autoral</figcaption></figure>
-        <figure><img src="captura-8-lcp-bootstrap.png" alt="Medição LCP do catálogo Bootstrap com o elemento LCP identificado" width="1200" height="800"><figcaption>Captura 8 — LCP do catálogo Bootstrap</figcaption></figure>
-
-        <h3>3. A leitura dos números</h3>
-        <p><strong>Os bytes.</strong> [Comparar o total de CSS transferido, calcular quantas vezes um é maior que o outro e descontar a folha Google Fonts do catálogo autoral. Explicar por que o total transferido da página não isola o custo do CSS.]</p>
-        <p><strong>O LCP.</strong> [Comparar as duas medianas e a variação entre as cinco cargas de cada página. Explicar o que os resultados permitem afirmar e o que não permitem concluir.]</p>
-        <p><strong>As linhas e as classes.</strong> [Comparar a quantidade de CSS próprio e de classes do cartão. Explicar onde fica o trabalho de alterar uma decisão compartilhada pelos cartões.]</p>
-        <p><strong>O que a medição não mostra.</strong> [Registrar pelo menos duas limitações das medições, sem usar a contagem de requisições como argumento.]</p>
-        <p><strong>Controle e trabalho.</strong> [Comparar os recursos presentes no catálogo autoral e ausentes no Bootstrap: link de pular, menu, barra de categorias, container query e :has(). Explicar o trabalho necessário para construí-los e as decisões que continuam sob controle do projeto.]</p>
-
-        <h3>4. Conclusão</h3>
-        <p>[Uma frase com a situação em que a AgroFeira deveria usar Bootstrap e outra em que não deveria, sustentadas por pelo menos um número real da tabela em cada justificativa.]</p>
     </main>
     <footer class="rodape-site"><p>AgroFeira — produtos frescos da nossa região.</p></footer>
 </body>

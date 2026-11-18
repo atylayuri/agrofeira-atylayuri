@@ -58,4 +58,9 @@ img { max-width: 100%; height: auto; }
     outline: 3px solid var(--cor-foco);
     outline-offset: 3px;
 }
+/* Sobre a faixa da marca, o anel usa a cor de texto da própria faixa */
+.cabecalho-site :focus-visible,
+.pagina-catalogo > nav[aria-label="Principal"] :focus-visible {
+    outline-color: var(--cor-sobre-marca);
+}
 }

@@ -80,7 +80,7 @@
     padding: 0;
     margin-bottom: var(--espaco-3);
 }
-/* Contorno no cartão inteiro quando o botão recebe foco pelo teclado */
+/* :has() — destaca o cartão inteiro quando o botão recebe foco pelo teclado */
 .cartao-produto:has(button:focus-visible) {
     outline: 3px solid var(--cor-foco);
     outline-offset: 3px;
