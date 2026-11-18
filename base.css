@@ -1,0 +1,61 @@
+@layer base {
+/* Estrutura e tipografia comum às páginas */
+html { scroll-behavior: smooth; }
+body {
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-texto);
+    font-size: var(--tamanho-texto);
+    line-height: 1.6;
+}
+main, aside { padding: var(--espaco-4) var(--espaco-3); min-width: 0; }
+h1, h2, h3 {
+    font-family: var(--fonte-titulo);
+    line-height: 1.2;
+    overflow-wrap: break-word;
+}
+h1 { font-size: var(--tamanho-h1); }
+h2 {
+    color: var(--cor-marca);
+    font-size: var(--tamanho-h2);
+    margin-block: var(--espaco-4) var(--espaco-1);
+}
+h3 {
+    color: var(--cor-marca);
+    font-size: var(--tamanho-h3);
+    margin-block: var(--espaco-3) var(--espaco-1);
+}
+p { max-width: 65ch; }
+p + p { margin-top: var(--espaco-2); }
+img { max-width: 100%; height: auto; }
+.cabecalho-site {
+    background: var(--cor-marca);
+    color: var(--cor-sobre-marca);
+    padding: var(--espaco-3);
+}
+.menu { list-style: none; padding: 0; }
+.menu a { color: var(--cor-sobre-marca); }
+.menu a[aria-current="page"] { font-weight: 700; }
+.rodape-site {
+    border-top: 1px solid var(--cor-borda);
+    color: var(--cor-texto-suave);
+    padding: var(--espaco-3);
+}
+/* Link de pular: continua no fluxo de acessibilidade, fora da tela até receber foco */
+.pular {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    transform: translateY(-150%);
+    z-index: 10;
+    background: var(--cor-marca);
+    color: var(--cor-sobre-marca);
+    padding: var(--espaco-2);
+}
+.pular:focus-visible { transform: translateY(0); outline-color: var(--cor-sobre-marca); }
+/* O foco é visível em todos os controles e links */
+:focus-visible {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 3px;
+}
+}

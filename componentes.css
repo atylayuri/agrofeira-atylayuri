@@ -1,0 +1,178 @@
+@layer componentes {
+/* Botões e estados */
+.busca button,
+.formulario-cadastro button,
+.barra-categorias button,
+.cartao-produto button {
+    background: var(--cor-marca);
+    color: var(--cor-sobre-marca);
+    border: 0;
+    border-radius: var(--raio);
+    padding: 0.6em 1em;
+    cursor: pointer;
+}
+.busca button:hover,
+.formulario-cadastro button:hover,
+.barra-categorias button:hover,
+.cartao-produto button:hover {
+    background: var(--cor-marca-forte);
+}
+/* Grade responsiva compartilhada pelas listas de produtos */
+.lista-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+    gap: var(--espaco-2);
+    list-style: none;
+    padding: 0;
+}
+.lista-produtos > li { min-width: 0; }
+.cartao-produto {
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+    min-width: 0;
+    padding: var(--espaco-2);
+    container-type: inline-size;
+}
+.cartao-produto article {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--espaco-1);
+    min-width: 0;
+}
+.cartao-produto img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--raio);
+}
+.cartao-produto h3 { margin-top: var(--espaco-1); }
+.produtor { color: var(--cor-texto-suave); }
+.preco { font-weight: 700; }
+/* Container query — deita somente o cartão cujo próprio espaço comporta foto e texto */
+@container (min-width: 30rem) {
+    .cartao-produto article {
+        grid-template-columns: minmax(10rem, 40%) minmax(0, 1fr);
+        align-items: center;
+        column-gap: var(--espaco-3);
+    }
+    .cartao-produto article > img {
+        grid-column: 1;
+        grid-row: 1 / span 4;
+        height: 100%;
+        min-height: 12rem;
+    }
+    .cartao-produto article > h3,
+    .cartao-produto article > p,
+    .cartao-produto article > button { grid-column: 2; }
+}
+/* O destaque atravessa todas as colunas da grade */
+.lista-produtos > .destaque { grid-column: 1 / -1; }
+/* A lateral mantém os cartões empilhados */
+.lateral .lista-produtos { grid-template-columns: minmax(0, 1fr); }
+/* A barra de categorias usa Flexbox e pode quebrar de linha */
+.barra-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaco-1);
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--espaco-3);
+}
+/* Contorno no cartão inteiro quando o botão recebe foco pelo teclado */
+.cartao-produto:has(button:focus-visible) {
+    outline: 3px solid var(--cor-foco);
+    outline-offset: 3px;
+}
+/* Peças das páginas já existentes */
+.figura-destaque figcaption { color: var(--cor-texto-suave); margin-top: var(--espaco-1); }
+.busca { display: flex; align-items: center; gap: var(--espaco-1); }
+.busca input,
+.formulario-cadastro input[type="text"],
+.formulario-cadastro input[type="email"],
+.formulario-cadastro input[type="tel"],
+.formulario-cadastro input[type="number"],
+.formulario-cadastro input[type="date"],
+.formulario-cadastro select,
+.formulario-cadastro textarea {
+    background: var(--cor-superficie);
+    color: var(--cor-texto);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    padding: 0.6em;
+    max-width: 100%;
+}
+.aviso {
+    background: var(--cor-superficie);
+    border: 1px solid var(--cor-marca);
+    border-radius: var(--raio);
+    margin-top: 20px;
+    padding: var(--espaco-2);
+    max-width: 65ch;
+}
+.tabela-safra th, .tabela-safra td { padding: var(--espaco-1); }
+.tabela-safra thead th { background: var(--cor-marca); color: var(--cor-sobre-marca); }
+.tabela-safra tbody td { background: var(--cor-superficie); }
+.formulario-cadastro > fieldset {
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    padding: var(--espaco-2);
+}
+.formulario-cadastro > fieldset + fieldset { margin-top: var(--espaco-3); }
+.formulario-cadastro fieldset fieldset { border: 0; padding: 0; }
+.formulario-cadastro > fieldset > legend { color: var(--cor-marca); font-weight: 700; }
+blockquote { color: var(--cor-texto-suave); padding-left: var(--espaco-2); }
+dt { font-weight: 700; }
+.pergunta {
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    padding: var(--espaco-2);
+    max-width: 65ch;
+}
+.pergunta + .pergunta { margin-top: var(--espaco-1); }
+/* Casca mobile-first exclusiva do catálogo */
+.pagina-catalogo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+        "cabecalho"
+        "menu"
+        "conteudo"
+        "lateral"
+        "rodape";
+    gap: var(--espaco-2);
+    min-width: 0;
+}
+.pagina-catalogo > .cabecalho-site { grid-area: cabecalho; }
+.pagina-catalogo > nav[aria-label="Principal"] {
+    grid-area: menu;
+    background: var(--cor-marca);
+    padding: var(--espaco-2) var(--espaco-3);
+    min-width: 0;
+}
+.pagina-catalogo > nav[aria-label="Principal"] .menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaco-2);
+}
+.pagina-catalogo > main { grid-area: conteudo; min-width: 0; }
+.pagina-catalogo > aside { grid-area: lateral; min-width: 0; }
+.pagina-catalogo > footer { grid-area: rodape; min-width: 0; }
+.pagina-catalogo main h2 { margin-top: 0; }
+/* Ponto de quebra calculado pelo espaço mínimo do menu, conteúdo e lateral */
+@media (min-width: 65rem) {
+    .pagina-catalogo {
+        grid-template-columns: 12rem minmax(0, 1fr) 14rem;
+        grid-template-areas:
+            "cabecalho cabecalho cabecalho"
+            "menu conteudo lateral"
+            "rodape rodape rodape";
+        gap: var(--espaco-3);
+    }
+    .pagina-catalogo > nav[aria-label="Principal"] .menu {
+        flex-direction: column;
+        gap: var(--espaco-2);
+    }
+}
+}
