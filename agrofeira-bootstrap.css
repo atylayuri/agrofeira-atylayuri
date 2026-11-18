@@ -19,3 +19,23 @@
     --bs-btn-active-bg: var(--cor-marca-forte);
     --bs-btn-active-border-color: var(--cor-marca-forte);
 }
+
+/* Barra de navegação: mesma faixa da marca do cabeçalho das outras páginas (base.css, .cabecalho-site) */
+.navbar {
+    --bs-tertiary-bg-rgb: var(--cor-marca-rgb);
+    --bs-navbar-color: var(--cor-sobre-marca);
+    --bs-navbar-hover-color: var(--cor-sobre-marca);
+    --bs-navbar-active-color: var(--cor-sobre-marca);
+    --bs-navbar-brand-color: var(--cor-sobre-marca);
+    --bs-navbar-brand-hover-color: var(--cor-sobre-marca);
+    --bs-navbar-toggler-border-color: var(--cor-sobre-marca);
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23FFFFFF' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar .nav-link { text-decoration: underline; }
+.navbar .nav-link.active { font-weight: 700; }
+.navbar :focus-visible { outline-color: var(--cor-sobre-marca); }
+@media (prefers-color-scheme: dark) {
+    .navbar {
+        --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2317251A' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+}
