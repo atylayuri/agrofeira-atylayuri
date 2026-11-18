@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Átyla Yuri Torres da Silva — Aula 6, registro de decisão</title>
+    <link rel="stylesheet" href="camadas.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="componentes.css">
+    <link rel="stylesheet" href="utilitarios.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <a class="pular" href="#conteudo-principal">
+        Pular para o conteúdo
+    </a>
+
+    <header class="cabecalho-site">
+
+        <h1>AgroFeira</h1>
+
+        <nav aria-label="Principal">
+            <ul class="menu">
+
+                <li>
+                    <a href="index.html">Início</a>
+                </li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+
+                <li>
+                    <a href="safra.html">Safra</a>
+                </li>
+
+                <li>
+                    <a href="cadastro-produtor.html">
+                        Cadastro de produtor
+                    </a>
+                </li>
+
+                <li>
+                    <a href="sobre.html">
+                        Sobre
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <main id="conteudo-principal">
+
+        <h2>Aula 6 — o registro de decisão</h2>
+
+        <p><strong>Nome completo:</strong> Átyla Yuri Torres da Silva</p>
+        <p><strong>Matrícula:</strong> 2024004967</p>
+        <p><strong>Repositório:</strong> https://github.com/atylayuri/agrofeira-atylayuri</p>
+        <ul>
+            <li><strong>Site:</strong> https://atylayuri.github.io/agrofeira-atylayuri/</li>
+            <li><strong>Catálogo com Bootstrap:</strong> https://atylayuri.github.io/agrofeira-atylayuri/catalogo-bootstrap.html</li>
+            <li><strong>Fechamento do pedido:</strong> https://atylayuri.github.io/agrofeira-atylayuri/checkout-bootstrap.html</li>
+        </ul>
+
+        <h3>1. As correções de acessibilidade</h3>
+
+        <table class="tabela-safra">
+            <caption>Correções de acessibilidade feitas no catálogo e no formulário com Bootstrap</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Componente</th>
+                    <th scope="col">Problema</th>
+                    <th scope="col">Como se detectou</th>
+                    <th scope="col">Correção</th>
+                    <th scope="col">Onde está no código</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Botão do menu</th>
+                    <td>O aria-label da documentação dá o nome "Toggle navigation", em inglês, numa página em português.</td>
+                    <td>Painel Accessibility do F12: depois da troca, o Name é "Menu".</td>
+                    <td>Trocar o texto do aria-label.</td>
+                    <td>button com navbar-toggler, atributo aria-label="Menu".</td>
+                </tr>
+                <tr>
+                    <th scope="row">Botão de fechar do diálogo</th>
+                    <td>O aria-label da documentação é "Close", também em inglês.</td>
+                    <td>Painel Accessibility com o diálogo aberto: Name "Fechar".</td>
+                    <td>Trocar o texto do aria-label.</td>
+                    <td>button com btn-close, dentro do modal-header, atributo aria-label="Fechar".</td>
+                </tr>
+                <tr>
+                    <th scope="row">Título do diálogo</th>
+                    <td>A documentação usa h1, mas a página já tem um h1 (o do catálogo), e dois h1 quebram a ordem dos títulos.</td>
+                    <td>Recomendação da documentação e conferência da hierarquia dos títulos.</td>
+                    <td>Usar h2, com a classe h5 para manter o tamanho.</td>
+                    <td>h2 com modal-title h5 e id="detalhe-acai-titulo", no modal-header.</td>
+                </tr>
+                <tr>
+                    <th scope="row">Diálogo (role)</th>
+                    <td>O validador lê o HTML sem rodar o script e não aceita aria-labelledby num div sem papel.</td>
+                    <td>Erro do validador do W3C sem o role.</td>
+                    <td>Escrever o role no arquivo, em vez de esperar o Bootstrap escrevê-lo ao abrir.</td>
+                    <td>div com modal fade e id="detalhe-acai", atributo role="dialog".</td>
+                </tr>
+                <tr>
+                    <th scope="row">Mensagens do formulário</th>
+                    <td>A classe was-validated é só CSS: o leitor de tela não liga a mensagem ao campo.</td>
+                    <td>Painel Accessibility no campo do e-mail: aria-describedby e Description com a frase da mensagem.</td>
+                    <td>Dar id a cada mensagem e ligar cada campo a ela com aria-describedby.</td>
+                    <td>Os inputs #nome, #email e #termos e os três div com invalid-feedback (nome-erro, email-erro, termos-erro).</td>
+                </tr>
+                <tr>
+                    <th scope="row">Títulos dos cartões</th>
+                    <td>Com um h1 no alto da página, os títulos h3 dos cartões pulavam um nível.</td>
+                    <td>Validador do W3C e leitura da hierarquia dos títulos.</td>
+                    <td>Trocar h3 por h2, mantendo as classes card-title h5.</td>
+                    <td>Os sete títulos dentro de article.card, no catalogo-bootstrap.html.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Pendências declaradas, que a marcação não resolve:</p>
+        <ul>
+            <li>Foco depois do envio com erro: ele fica no botão "Fazer pedido", e levá-lo ao primeiro campo com erro exige programa meu.</li>
+            <li>O diálogo é só do açaí: trocar o conteúdo conforme o produto exige programa meu.</li>
+            <li>Contraste dos botões de contorno ("Ver detalhes" e "Fechar"): o texto cinza (#6c757d) sobre o creme da página (#F4F1EA) dá 4,16:1, abaixo de 4,5:1; corrigir pede uma cor própria para esses botões.</li>
+        </ul>
+
+        <h3>2. O registro de decisão</h3>
+
+        <h4>Contexto</h4>
+        <p>
+            Preciso escolher como estilizar a AgroFeira daqui em diante, inclusive no React do encontro 11. A folha autoral tem 360 linhas de CSS em seis arquivos, e o catalogo.html usa 13 classes distintas. A versão com Bootstrap usa 61 classes distintas e 41 linhas minhas por cima da folha do framework. O script do Bootstrap pesou cerca de 25 kB transferidos (80,5 kB do arquivo aberto). Sem JavaScript, o menu e o "Ver detalhes" não abriram e o formulário vazio foi enviado (Passo 10).
+        </p>
+
+        <h4>Opções consideradas</h4>
+        <ul>
+            <li><strong>Folha autoral:</strong> ganha controle total e nenhum arquivo de terceiros (360 linhas minhas); cobra escrever tudo, inclusive menu e diálogo.</li>
+            <li><strong>Bootstrap:</strong> ganha menu e diálogo prontos, que a documentação lista entre os componentes que dependem do JavaScript dele (Getting started, Introduction, "JS components"); cobra cerca de 25 kB de script, e sem ele o menu não abre.</li>
+            <li><strong>Tailwind:</strong> pelos slides, só traz utilitários e o componente é a marcação que eu monto; o Play CDN é um script só para desenvolvimento.</li>
+        </ul>
+
+        <h4>Decisão</h4>
+        <p>
+            Fico com a folha autoral, inclusive no React. O script do Bootstrap troca classes e atributos dos mesmos elementos que o React monta e remonta, e prefiro não ter dois programas mexendo na mesma página.
+        </p>
+
+        <h4>Consequências aceitas</h4>
+        <ul>
+            <li>Terei de escrever em React o menu retrátil e o diálogo, o que dá mais trabalho do que o HTML que o Bootstrap pediu.</li>
+            <li>As seis correções da tabela passam a ser minhas desde o início: nome dos botões, foco preso no diálogo e fechamento com Esc.</li>
+            <li>Manterei as 360 linhas e a ordem das camadas, sem grade nem classes prontas.</li>
+        </ul>
+
+        <h4>O que me faria mudar de ideia</h4>
+        <ul>
+            <li>Montar o menu e o diálogo em React levar mais de duas semanas.</li>
+            <li>O painel Accessibility mostrar no meu menu ou diálogo um nome ou foco que eu não consiga corrigir.</li>
+        </ul>
+        <p>
+            Nesse caso eu voltaria ao Bootstrap só com a folha de estilo, sem o script.
+        </p>
+
+        <h4>Fontes</h4>
+        <ul>
+            <li>Bootstrap, documentação oficial: Getting started, Introduction, seção "JS components" (getbootstrap.com/docs/5.3/getting-started/introduction).</li>
+            <li>Grant, <cite>CSS in Depth</cite>: tema consultado, organização do CSS e propriedades personalizadas.</li>
+        </ul>
+
+    </main>
+
+    <footer class="rodape-site">
+        <p>
+            AgroFeira — produtos frescos da nossa região.
+        </p>
+    </footer>
+
+</body>
+</html>
