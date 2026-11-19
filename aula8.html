@@ -58,9 +58,7 @@
 
     <main id="conteudo-principal">
 
-        <h2>JavaScript na AgroFeira </h2>
-
-                <h2>JavaScript na AgroFeira</h2>
+        <h2>JavaScript na AgroFeira</h2>
 
         <p>Aluno: Átyla Yuri Torres da Silva </p>
         <p>Matrícula: 2024004967</p>
@@ -72,7 +70,7 @@
 
         <p>
         Site público:
-        <a href="https://atylayuri.github.io/agrofeira-atylayuri/catalogo.html">https://atylayuri.github.io/agrofeira-atylayuri/catalogo.html</a>
+        <a href="https://atylayuri.github.io/agrofeira-atylayuri/aula8.html">https://atylayuri.github.io/agrofeira-atylayuri/aula8.html</a>
         </p>
           
 
@@ -90,15 +88,82 @@
         <h2>Meus projetos</h2>
         <ul>
             <li>
-                Tabuleiro - parte B:
+                Tabuleiro do tutorial - Parte B:
                 <a href="https://codesandbox.io/p/sandbox/react-dev-forked-424pxk?file=%2Fsrc%2FApp.js%3A4%2C24">https://codesandbox.io/p/sandbox/react-dev-forked-424pxk?file=%2Fsrc%2FApp.js%3A4%2C24</a>
             </li>
 
-            <li>Tabuleiro - Parte C:
+            <li>AgroFeira em componentes - Parte C:
                 <a href="https://codesandbox.io/p/sandbox/react-dev-forked-2zxvk6?file=%2Fsrc%2FApp.js">https://codesandbox.io/p/sandbox/react-dev-forked-2zxvk6?file=%2Fsrc%2FApp.js</a>
             </li>
         </ul>
 
+       <h2>Mensagens que encontrei</h2>
+
+        <ol>
+            <li>
+            <strong>Passo 6 — Função inexistente</strong>
+            <pre><code>Uncaught ReferenceError: naoExiste is not defined
+            at aula8.js:2:1</code></pre>
+            </li>
+
+            <li>
+            <strong>Passo 10 — Elementos JSX adjacentes</strong>
+            <pre><code>SyntaxError: /src/App.js: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment &lt;&gt;...&lt;/&gt;? (2:46)</code></pre>
+            </li>
+
+            <li>
+            <strong>Passo 14 — Identificador duplicado</strong>
+            <pre><code>SyntaxError: /src/App.js: Identifier 'value' has already been declared. (2:18)</code></pre>
+            </li>
+        </ol>
+        </section>
+        
+        <section>
+        <h2>O que eu aprendi</h2>
+
+        <h3>1. As três formas de JavaScript</h3>
+
+        <p>
+            Para um programa com vária linhas compartilhado entre várias páginas,
+            a escolha ideal é o JavaScript externo, armazenado em um arquivo
+            .js próprio e conectado ao HTML pelo atributo src. Essa abordagem
+            permite um maior controle e flixibilidade do códgio além da forma 
+            que permiti a alteração e manutenção do código mais facilmente operavel.
+        </p>
+
+        <h3>2. Repetição e componentes React</h3>
+
+        <p>
+        No arquivo catalogo.html da AgroFeira,os cartões de produto
+        que estruturam as mercadorias oferecidas se repetem várias vezes. 
+        O componente equivalente que substituiria essa repetição de 
+        código seria o componente Produto, cumprindo
+        o mesmo papel de reaproveitamento que o Square teve no
+        tabuleiro. é útil para otimizar a estrutura do site e evitar blocos de códigos
+        longos e redundantes.
+        </p>
+        
+        <h3>3. Props e estado no React</h3>
+
+        <p>
+        O componente Produto recebe o nome do item (como "Açaí", do catálogo) por meio de props,
+        enquanto o texto do botão é gerenciado pelo estado rotulo — que alterna de "Adicionar" 
+        para "No carrinho" ao ser clicado. Como cada instância possui um estado isolado e independente,
+        clicar em um produto não interfere nos outros. Assim, selecionar o Açaí e a Banana altera somente 
+        os seus respectivos botões, deixando a Farinha d'água com o rótulo inicial.
+        </p>
+
+        <h3>4. A decisão de estilo</h3>
+
+        <p>
+       Mantive a minha escolha inicial pelo uso do Bootstrap na AgroFeira, pois a produtividade
+        e a padronização oferecidas pelos seus componentes prontos continuam sendo grandes
+        vantagens para o projeto. Ainda assim, a experiência prática com um arquivo styles.css
+        escrito à mão no CodeSandbox mostrou que o CSS autoral também é totalmente viável para
+        estilizar os cartões de produtos. Para as próximas etapas do desenvolvimento, essa 
+        decisão apenas exigirá atenção redobrada para gerenciar possíveis conflitos entre o
+        comportamento do framework e os componentes dinâmicos do React.
+        </p>
 
     </main>
 
